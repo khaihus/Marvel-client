@@ -1,0 +1,11 @@
+.slideshow{
+    margin-left: 0.2% ;
+    margin-right: 0.2%;
+}
+.carousel-item{
+    height: 70vh;
+}
+.carousel-item > img { 
+    width: 100%; 
+    height: auto;
+}
