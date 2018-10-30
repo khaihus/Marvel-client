@@ -59,7 +59,7 @@ class DetailMovie extends Component {
     }
 
     render() {
-        console.log("url2 : "+config.rootPath+"/movies/"+`${this.props.match.params.moviesId}`);
+        // console.log("url2 : "+config.rootPath+"/movies/"+`${this.props.match.params.moviesId}`);
         return (
             <div>
                 <div className="show" style={{height: this.state.showHeight}}>
@@ -75,8 +75,7 @@ class DetailMovie extends Component {
                                 {/* <button className="btn btn-facebook">
                                     <FontAwesomeIcon icon={['fab', 'facebook']}/> Share</button> */}
                                     <div className="fb-share-button" data-href={`https://marvelfan.herokuapp.com/movies/${this.props.match.params.moviesId}`} data-layout="button" data-size="large" data-mobile-iframe="true">
-                                    {/* <div className="fb-share-button" data-href="https://eslint.org/docs/rules/no-useless-concat" data-layout="button" data-size="large" data-mobile-iframe="true"> */}
-                                        <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarvelfan.herokuapp.com%2Fmovies%2F${this.props.match.params.moviesId}&amp;src=sdkpreparse`} className="fb-xfbml-parse-ignore">Share</a>
+                                        <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarvelfan.herokuapp.com%2Fmovies%2F${this.props.match.params.moviesId}&amp;src=sdkpreparse`} className="fb-xfbml-parse-ignore">Share</a>
                                     </div>
                             </div>    
                             <div className="col-half" style={{width: this.state.colhalfWidth}}>
