@@ -26,10 +26,10 @@ class AllNews extends Component {
                                 </small></p>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/13.PNG")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/13.PNG")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">COMICS
                                 </small></p>
@@ -43,10 +43,10 @@ class AllNews extends Component {
                                 </small></p>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/14.PNG")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/14.PNG")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">COMICS
                                 </small></p>
@@ -64,10 +64,10 @@ class AllNews extends Component {
                 </div>
 
                 <div className="card-deck mt-3">
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/15.PNG")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/15.PNG")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">COMICS
                                 </small></p>
@@ -82,10 +82,10 @@ class AllNews extends Component {
                                 </small></p>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/12.png")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/12.png")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">COMICS
                                 </small></p>
@@ -100,10 +100,10 @@ class AllNews extends Component {
                                 </small></p>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/16.PNG")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/16.PNG")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">COMICS
                                 </small></p>
@@ -119,10 +119,10 @@ class AllNews extends Component {
                     </div>
                 </div>
                 <div className="card-deck mt-3">
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/17.png")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/17.png")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">COMICS
                                 </small></p>
@@ -137,10 +137,10 @@ class AllNews extends Component {
                                 </small></p>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/19.PNG")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/19.PNG")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">CULTURE & LIFESTYLE
                                 </small></p>
@@ -156,10 +156,10 @@ class AllNews extends Component {
                                 </small></p>
                         </div>
                     </div>
-                    <div className="card">
+                    <div className="card shadows">
                         <a href="https://www.marvel.com/articles/tv-shows/marvel-daredevil-season-3-spoilers-wilson-fisk-dex-kingpin-bullseye"
                             target="_blank"  rel="noopener noreferrer">
-                            <img className="card-img-top" src={require("../../media/18.PNG")} alt="marvel news"/></a>
+                            <img className="card-img-top shadows" src={require("../../media/18.PNG")} alt="marvel news"/></a>
                         <div className="card-body">
                             <p className="card-text"><small className="text-muted">COMICS
                                 </small></p>
