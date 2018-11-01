@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SearchField from './SearchField'
 import ProfilePanel from './ProfilePanel'
-// import logo from '../img/logo.png'
-import logo from '../img/Capture.PNG'
+import logo from '../img/A.png'
 
 class NavBar extends Component { 
+    
+
     render() {
         return (
             <div> 
                 <nav className="navbar navbar-expand-lg topNav">
                     <div className="container ">
                         <div className="col-3">
-                            <ProfilePanel username = {this.props.username} onLogin={this.props.onLogin}/>
+                            <ProfilePanel username = {this.props.username} onLogin={this.props.isAuthenticated}/>
                         </div>
                         <div className="col-6 text-center" >
                             <Link to={"/"}>

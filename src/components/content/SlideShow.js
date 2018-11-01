@@ -21,7 +21,7 @@ const items = [
     {
         src:img_2,
         altText: 'avenger infi war',
-        caption: '2017',
+        caption: '2018',
         header: 'Avenger: Infinity War'
     },
     {

@@ -9,8 +9,11 @@ import AllMovies from "./components/containers/AllMovies";
 import AllTVshows from "./components/containers/AllTVshows";
 import DetailMovie from "./components/content/DetailMovie";
 import DetailTVshow from "./components/content/DetailTVshow";
-import login from "./components/form/Login";
-
+// import axios from './axios';
+import Login from './components/form/Login';
+import SignUp from './components/form/SignUp';
+import Favorite from './components/content/Favorite';
+import SearchResult from './components/content/SearchResult';
 import Footer from './components/Footer';
 import { BrowserRouter, Route } from 'react-router-dom';
 // import axios from "./axios";
@@ -25,6 +28,8 @@ import './css/slideshow.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+// import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+
 // import { faCheckSquare, faCoffee, faHeart } from '@fortawesome/free-solid-svg-icons';
 library.add(fab );
 
@@ -37,24 +42,86 @@ library.add(fab );
 
 class App extends Component {
 
-  componentDidCatch(){
-    // document.body.scrollTop = 0;
-    
-    //lấy dữ liệu từ server
+  state = {
+    username:"",
+    searchString:""
+  };
+
+  
+  changeAuthenticated=()=>{
+   
+    const token= sessionStorage.getItem("status");
+
+    // if(!token){
+    //   console.log("eo co session")
+    // }else{
+    //   console.log("abc vcl : "+token);
+    // }
+    // console.log("user: "+ this.state.username)
+
+    if(!token ) return false;
+    else return true;
   }
 
-  render() {
+  onSearchChanged = text =>{
+    this.setState({ searchString: text });
+    // axios
+    //   .get(`/api/movies/search/Marvel`)
+    //   .then(data => {
+    //       this.setState({ 
+    //           movieContents: data.data
+    //       });
+    //       this.state.history.push("/search");
+    //   })
+    //   .catch(err => console.error(err));
+  } 
 
+  
+  // componentDidUpdate(){
+    // this.setState({username:sessionStorage.getItem("username")});
+  // };
+
+  // _onLogin = (username,password) => {   
+  //   axios
+  //     .post("/api/auth",{
+  //       username: username,
+  //       password: password
+  //     })
+  //     .then(response => 
+  //       this.setState({
+  //         username: response.data.username
+  //       })
+  //     )
+  //     .catch(err => console.error(err));   
+  // };
+  
+  // componentDidCatch(){
+    // document.body.scrollTop = 0;
+    
+    // lấy dữ liệu từ server
+  // }
+
+  render() {
+    let text = this.state.searchString;
     return (
-      // <BrowserRouter onUpdate={() => window.scrollTo(0, 0)}>
       <BrowserRouter>
         <ScrollToTop>
           <div className="App">
             <header className="App-header sticky-top">
-              <NavBar/>
-              <NavBar2/>
+            <Route path="/" render={props =>{
+              return <NavBar {...props} username={this.state.username} isAuthenticated={this.changeAuthenticated} onSearchChanged={this.onSearchChanged}/>
+            }}>
+            </Route>
+            <NavBar2/>
             </header>
-            <Route exact path="/Login" component={login}></Route>
+            <Route exact path="/Login" render={props =>{
+              return <Login isAuthenticated={this.changeAuthenticated}/>
+            }}>
+            </Route>
+            <Route exact path="/SignUp" render={props =>{
+              return <SignUp/>
+            }}>
+            </Route>
             <div className="middleP">
               <div className="slideshow">
                 <Route exact path="/" component={SlideShow} />
@@ -62,16 +129,21 @@ class App extends Component {
               <div className="homecontent">
                 <Route exact path="/" component={HomeContent} />
               </div>
-                {/* <Route exact path="/movies" component={MovieContent} /> */}
-                <Route exact path="/movies" component={AllMovies} />
-                <Route exact path="/tvshows" component={AllTVshows} />
-                {/* <Route exact path={`/movies/1`} component={DetailMovie}/> */}
-                <Route path="/movies/:moviesId" render={(props)=>{
-                    return <DetailMovie {...props}  />
-                  }} />
-                <Route path="/tvshows/:tvshowId" render={(props)=>{
-                    return <DetailTVshow {...props}  />
-                  }} />
+              <Route exact path="/movies" component={AllMovies} />
+              <Route exact path="/tvshows" component={AllTVshows} />
+              <Route exact path="/search/:value" render={props=>{
+                return <SearchResult {...props} onSearchChanged={this.onSearchChanged} text ={text} />
+              }}/>
+
+              <Route exact path={`/favorite`} render={props=>{
+                return <Favorite {...props} onLogin={this.changeAuthenticated}/>
+              }} />
+              <Route path="/movies/:moviesId" render={(props)=>{
+                  return <DetailMovie {...props}  />
+              }} />
+              <Route path="/tvshows/:tvshowId" render={(props)=>{
+                  return <DetailTVshow {...props}  />
+              }} />
             </div>
             <Footer/>
           </div>

@@ -5,6 +5,13 @@
 .carousel-item{
     height: 70vh;
 }
+
+@media only screen and (max-width: 900px){
+    .carousel-item{
+        height: 100%;
+    }
+  }
+  
 .carousel-item > img { 
     width: 100%; 
     height: auto;

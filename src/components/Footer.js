@@ -8,9 +8,9 @@ class Footer extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-sm-12 col-md-12 col-lg-3">
-                                <a href="#top">
-                                    <img src={require("../img/A.jpg")} alt=""/>
-                                </a>
+                                {/* <a target="_blank" without rel="noopener noreferrer" href="#top"> */}
+                                    <img src={require("../img/mcu-logo-render.jpg")} alt=""/>
+                                {/* </a> */}
                             </div>
                             <div className="col-12 col-sm-12 col-md-4 col-lg-3">
                                 <h5>Marvel fan film</h5>
@@ -36,13 +36,13 @@ class Footer extends Component {
                             <div className="col-12 col-sm-12  col-md-4 col-lg-2">
                                 <h5>Source</h5>
                                 <li>
-                                    <a href="#top">Github</a>
+                                    <a target="_blank" without rel="noopener noreferrer" href="#top">Github</a>
                                 </li>
                                 <li>
-                                    <a href="#top">Movie.org</a>
+                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.themoviedb.org/">TheMoviedb</a>
                                 </li>
                                 <li>
-                                    <a href="#top">Facebook </a>
+                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/Techkids.Code.the.Change">Facebook</a>
                                 </li>
 
                             </div>
@@ -50,29 +50,24 @@ class Footer extends Component {
                                 <h5>About Us</h5>
                                 <ul>
                                     <li>
-                                        <a href="#top">3 từ thôi: Team pro vl</a>
+                                        <a target="_blank" without rel="noopener noreferrer" href="#top">3 từ thôi: Team pro vl</a>
                                     </li>
                                 </ul>
                             </div>
                             <div className="col-12 col-sm-12 col-md-12 col-lg-2">
                                 <div className="social-networks">
-                                    <a href="#top" className="twitter">
+                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/Techkids.Code.the.Change" className="twitter">
                                         <i className="">
                                             <img src={require("../img/icons8-facebook-48.png")} alt="" width="30px" height="30px"/>
                                         </i>
                                     </a>
-                                    <a href="#top" className="facebook">
-                                        <i className="">
-                                            <img src={require("../img/icons8-twitter-64.png")} alt="" width="30px" height="30px"/>
-                                        </i>
-                                    </a>
-                                    <a href="#top" className="youtube">
+                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=c%C3%BA+l%E1%BB%ABa" className="youtube">
                                         <i className="">
                                             <img src={require("../img/youtube.png")} alt="" width="30px" height="30px"/>
                                         </i>
                                     </a>
                                 </div>
-                                <a href="feedback.html">
+                                <a href="#top">
                                     <button type="button" className="btn btn-default">Feedback</button>
                                 </a>
                             </div>

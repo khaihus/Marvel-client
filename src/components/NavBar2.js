@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 class NavBar2 extends Component {
     render() {
-        const user = `admin`;
+        // const user = ``;
         // const movePage = (page) =>{
         //     page.preventDefault();
         //     // <Redirect to={`/Movies`}/>
@@ -16,21 +16,22 @@ class NavBar2 extends Component {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav nav mr-auto col-12 justify-content-center text-center">
-                        <li className="nav-item item">
-                            <Link to={`/movies`} className="nav-link link">MOVIE</Link>
+                    <ul className="navbar-nav nav mr-auto menubarList">
+                        <li className="nav-item avtive listItem">
+                            <Link to={`/movies`} className="nav-link ">MOVIE</Link>
                         </li>
-                        <li className="nav-item item">
-                            <Link to={`/tvshows`} className="nav-link link">TV SERIES</Link>
+                        <li className="nav-item avtive listItem">
+                            <Link to={`/tvshows`} className="nav-link ">TV SERIES</Link>
                         </li>
-                        <li className="nav-item item">
-                            <Link to={`/news`} className="nav-link link">NEWS</Link>
+                        <li className="nav-item avtive listItem">
+                            <Link to={`/news`} className="nav-link ">NEWS</Link>
                         </li>
-                        <li className="nav-item item">
-                            <Link to={`/${user._id}/favorite`} className="nav-link link">FAVORITE</Link>
+                        <li className="nav-item avtive listItem">
+                            {/* <Link to={`/favorite`} className="nav-link link">FAVORITE</Link> */}
+                            <Link to={`/favorite`} className="nav-link ">FAVORITE</Link>
                         </li>
-                        <li className="nav-item item">
-                            <Link to={`/about`} className="nav-link link">ABOUT US</Link>
+                        <li className="nav-item avtive listItem">
+                            <Link to={`/about`} className="nav-link ">ABOUT US</Link>
                         </li>
 
                     </ul>

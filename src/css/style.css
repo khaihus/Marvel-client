@@ -6,11 +6,11 @@ h5{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-}
+} 
 nav {
     background-color: #22262a; 
-    display: flex;
-    height: 52px;
+    /* display: flex;
+    height: 52px; */
     border-bottom: 1px solid #393939;
     padding: 0 20px;
     font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
@@ -51,13 +51,13 @@ nav {
 }
 
 
-.menubar {
+/* .menubar {
     border-top: 1px solid #393939;
     border-bottom: 1px solid #393939;
     color: white;
     height: 45px;
     z-index: 1;
-}
+} */
 
 h2 span {
     color: white;
@@ -66,12 +66,12 @@ span a {
     color: white;
 }
 
-.collapse {
+/* .collapse {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-}
+} */
 
 
 .link {
@@ -268,9 +268,9 @@ span a {
 .trailer {
     position: relative;
 }
-.col-half{
+/* .col-half{ */
     /* width: 100%; */
-}
+/* } */
 .favor{
     color: #fff;
 }
@@ -281,6 +281,11 @@ span a {
 .image-inner .content .hightlight{
     font-weight: 700;
 }
+
+.shadows{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .filmDetail img{
 
    width: 100%;
@@ -344,8 +349,15 @@ z-index: 2;
 }
 
 .btn-love{
-    width: 110px;
+    width: 83px;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 28px;
+    padding: 0 4px 0 6px;
     color: white;
+
+    line-height: 1.8;
+    
     background-color: #cd1f23;
     /* margin-top:3vh; */
 }
@@ -365,3 +377,43 @@ z-index: 2;
     border: solid 1px  ;
     border-radius: 5px;
 }
+
+.love{
+    font-size: 2.5rem; 
+    float: right;
+    color: #ccc;
+}
+.love :hover{
+    color: #cd1f23;
+}
+
+.menubar {
+    text-align: center; 
+    margin:auto;
+    display: flex; 
+    width: 100%;
+    box-sizing: border-box; 
+
+}
+
+.menubarList{
+    display: flex;
+            margin-left: auto;
+            margin-right: auto;
+}
+
+.listItem{
+    font-weight: 800;
+    padding: 0 18px;
+    cursor: pointer;
+    list-style: none;
+}
+.listItem :hover{
+    border-bottom: solid 0.2px orangered;
+}
+
+/* @media only screen and (max-width: 500px){
+    .form-control{
+        display: none;
+    }
+  } */

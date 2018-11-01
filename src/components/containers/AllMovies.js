@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 
 class AllMovies extends Component {
     state = {
-        movieContents:[{}]
+        word: "MOVIES",
+        size: "8rem",
+        movieContents:[{}],
+        searchString:""
 	}
       
     componentDidMount(){
@@ -18,11 +21,39 @@ class AllMovies extends Component {
                 });
             })
             .catch(err => console.error(err));
+            window.addEventListener('resize', this.handleResize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize)
+    }
+
+    handleResize = (event) => {
+        // console.log(window.innerHeight, window.innerWidth);
+        if(window.innerWidth<700){
+            this.setState({
+                size: "4rem",
+            })
+        }else{
+            this.setState({
+               size:"8rem"
+            })
+        }
+
+        if(window.innerWidth<500){
+            this.setState({
+                size: "2rem"
+            })
+        }else{
+            this.setState({
+               word:"MOVIES"
+            })
+        }
     }
 
     render() {
         const allMovie = this.state.movieContents.map(content => (
-            <div key={content._id} className="col-4"> 
+            <div key={content._id} className="col-md-4"> 
                 <Link to = {`/movies/${content.moviesId}`} className="elementlink">
                     <EachMovie detail={content}  />
                 </Link>
@@ -32,7 +63,7 @@ class AllMovies extends Component {
         return (
             <div>
                 <div style={{position: "absolute", top: "15%", left: "0", width:"100%",  zIndex: "2"}} >
-                    <h1 style={{fontSize:"8rem",color: "white",textAlign:"center"}}>MOVIES</h1>
+                    <h1 style={{fontSize:this.state.size,color: "white",textAlign:"center"}}>{this.state.word}</h1>
                 </div>
                 <img style={{width:"100%",zIndex:"10",marginTop:"-40px"}} src="https://terrigen-cdn-dev.marvel.com/content/prod/2x/daredevils3-com_mas_dsk_01.jpg" alt="Cú lừa"/>
                 

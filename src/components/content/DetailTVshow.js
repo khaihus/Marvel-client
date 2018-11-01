@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart,faTrash } from '@fortawesome/free-solid-svg-icons';
 // import config from '../../config';
 import axios from "../../axios";
 
@@ -11,7 +11,10 @@ class DetailTVshow extends Component {
         showHeight: "50vh",
         colhalfWidth: "100%",
         btnLoveMT : "3vh",
-        h1Font: "4rem"
+        h1Font: "4rem",
+        word: "Favorite",
+        fa: faHeart,
+        isclick: "off"
 	}
 
     componentDidMount(){
@@ -56,7 +59,97 @@ class DetailTVshow extends Component {
         }
     }
 
+    handleChangeFa = (event) => {
+        if(this.state.isclick === "off"){
+            this.setState({
+                isclick: "on",
+                fa: faTrash,
+                word: "Delete"
+            })
+            return false;
+        }else {
+            this.setState({
+                isclick: "off",
+                fa: faHeart,
+                word: "Favorite"
+            })
+            // return true;
+        }
+    }
+
+    addFavor = () =>{
+        axios({
+            method: 'put',
+            url: `api/listfavor/add`,
+            data: {
+                username:sessionStorage.getItem('username'),
+                "ob":{Id:`tv/${this.props.match.params.tvshowId}`
+                ,name:`${this.state.tvshowDetail.name}`}
+            },
+            withCredentials:true
+            
+          }).then(data =>{
+            // this.handleChangeFa;
+
+            // this.setState({isclick:"off"})
+
+            console.log(data);
+        }).catch(err =>{
+            console.log(err+" loi addFV")
+            if(err.response.status===401){
+                this.props.history.push("/Login"); 
+            }
+            if(err.response.status===500){
+                axios({
+                    method: 'post',
+                    url: `api/listfavor/create`,
+                    data: {
+                        username:sessionStorage.getItem('username'),
+                        "listfv":{Id:`tv/${this.props.match.params.moviesId}`
+                        ,name:`${this.state.tvshowDetail.name}`}
+                    },
+                    withCredentials:true
+                }).then(data =>{
+                    console.log(data);
+                }).catch(err =>{
+                    console.log(err+" fail to create list")
+                });
+            }
+        });
+    }
+
+    deleteFavor = () =>{
+        axios({
+            method: 'put',
+            url: `api/listfavor/dele`,
+            data: {
+                username:sessionStorage.getItem('username'),
+                Id:`tv/${this.props.match.params.moviesId}`
+            },
+            withCredentials:true
+            
+          }).then(data =>{
+            // this.handleChangeFa;
+
+            // this.setState({isclick:"off"})
+
+            console.log(data);
+        }).catch(err =>{
+            console.log(err+" loi delete")
+        });
+    }
     render() {
+        const showFavButton = this.state.word ==="Favorite" ? 
+        <div>
+            <button onClick={this.addFavor} className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
+                <FontAwesomeIcon icon={this.state.fa}/> {this.state.word}
+            </button>
+        </div>:
+        <div>
+            <button onClick={this.deleteFavor} className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
+                <FontAwesomeIcon icon={this.state.fa}/> {this.state.word}
+            </button>
+        </div>
         return (
             <div>
                  <div className="show" style={{height: this.state.showHeight}}>
@@ -66,7 +159,7 @@ class DetailTVshow extends Component {
                     <div className="favor">
                         <h1 style={{fontSize:this.state.h1Font}}>{this.state.tvshowDetail.title}</h1>
                         {/* <h2>{this.state.tvshowDetail.release_date}</h2> */}
-                        <br />
+                        <br /><br /><br />
                         <div className="row">
                             <div className="col-half" style={{width: this.state.colhalfWidth}}>
                                 {/* <button className="btn btn-facebook">
@@ -76,14 +169,15 @@ class DetailTVshow extends Component {
                                 </div>
                             </div>
                             <div className="col-half" style={{width: this.state.colhalfWidth}}>
-                                <button className="btn btn-love" style={{marginTop: this.state.btnLoveMT}}>
-                                    <FontAwesomeIcon icon={faHeart}/> Favorite</button>
+                                {/* <button className="btn btn-love" style={{marginTop: this.state.btnLoveMT}}>
+                                    <FontAwesomeIcon icon={faHeart}/> Favorite</button> */}
+                                    {showFavButton}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="container mt-3 trailer">
-                    <h2><span></span><span className="hightlight">Trailer</span></h2>
+                    {/* <h2><span></span><span className="hightlight">Trailer</span></h2> */}
                         <div className="card-img-top embed-responsive embed-responsive-16by9">
                             {/* <iframe src={"https://www.youtube.com/embed/QwievZ1Tx-8?autoplay=1"} frameborder="0" title="abc" allow="autoplay; encrypted-media"></iframe> */}
                         </div>

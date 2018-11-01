@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import config from '../../config';
+import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { withRouter } from 'react-router-dom'
+// import config from '../../config';
+// import { Link } from "react-router-dom";
 import axios from "../../axios";
 class DetailMovie extends Component {
 
@@ -10,7 +12,10 @@ class DetailMovie extends Component {
         showHeight: "50vh",
         colhalfWidth: "100%",
         btnLoveMT : "3vh",
-        h1Font: "4rem"
+        h1Font: "4rem",
+        word: "Favorite",
+        fa: faHeart,
+        isclick: "off"
 	}
       
     componentDidMount(){
@@ -25,10 +30,28 @@ class DetailMovie extends Component {
         window.addEventListener('resize', this.handleResize);
         // console.log(window.innerHeight, window.innerWidth);
         console.log("url : "+window.location.href);
-    }
+}
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize)
+    }
+
+    handleChangeFa = (event) => {
+        if(this.state.isclick === "off"){
+            this.setState({
+                isclick: "on",
+                fa: faTrash,
+                word: "Delete"
+            })
+            return false;
+        }else {
+            this.setState({
+                isclick: "off",
+                fa: faHeart,
+                word: "Favorite"
+            })
+            // return true;
+        }
     }
 
     handleResize = (event) => {
@@ -58,8 +81,81 @@ class DetailMovie extends Component {
         }
     }
 
+    addFavor = () =>{
+        axios({
+            method: 'put',
+            url: `api/listfavor/add`,
+            data: {
+                username:sessionStorage.getItem('username'),
+                "ob":{Id:`movie/${this.props.match.params.moviesId}`
+                ,name:`${this.state.movieDetail.name}`}
+            },
+            withCredentials:true
+            
+          }).then(data =>{
+            // this.handleChangeFa;
+
+            // this.setState({isclick:"off"})
+
+            console.log(data);
+        }).catch(err =>{
+            console.log(err+" loi addFV")
+            if(err.response.status===401){
+                this.props.history.push("/Login"); 
+            }
+            if(err.response.status===500){
+                axios({
+                    method: 'post',
+                    url: `api/listfavor/create`,
+                    data: {
+                        username:sessionStorage.getItem('username'),
+                        "listfv":{Id:`movie/${this.props.match.params.moviesId}`
+                        ,name:`${this.state.movieDetail.name}`}
+                    },
+                    withCredentials:true
+                }).then(data =>{
+                    console.log(data);
+                }).catch(err =>{
+                    console.log(err+" fail to create list")
+                });
+            }
+        });
+    }
+
+    deleteFavor = () =>{
+        axios({
+            method: 'put',
+            url: `api/listfavor/dele`,
+            data: {
+                username:sessionStorage.getItem('username'),
+                Id:`movie/${this.props.match.params.moviesId}`
+            },
+            withCredentials:true
+            
+          }).then(data =>{
+            // this.handleChangeFa;
+
+            // this.setState({isclick:"off"})
+
+            console.log(data);
+        }).catch(err =>{
+            console.log(err+" loi delete")
+        });
+    }
+
     render() {
-        // console.log("url2 : "+config.rootPath+"/movies/"+`${this.props.match.params.moviesId}`);
+        const showFavButton = this.state.word ==="Favorite" ? 
+        <div>
+            <button onClick={this.addFavor} className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
+                <FontAwesomeIcon icon={this.state.fa}/> {this.state.word}
+            </button>
+        </div>:
+        <div>
+            <button onClick={this.deleteFavor} className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
+                <FontAwesomeIcon icon={this.state.fa}/> {this.state.word}
+            </button>
+        </div>
+
         return (
             <div>
                 <div className="show" style={{height: this.state.showHeight}}>
@@ -68,19 +164,25 @@ class DetailMovie extends Component {
                     </div>
                     <div className="favor" >
                         <h1 style={{fontSize:this.state.h1Font}}>{this.state.movieDetail.name}</h1>
-                        <h2>{this.state.movieDetail.release_date}</h2>
+                        <h4>Release Date: {this.state.movieDetail.release_date}</h4>
                         <br />
                         <div className="row">
                             <div className="col-half" style={{width: this.state.colhalfWidth}}>
                                 {/* <button className="btn btn-facebook">
                                     <FontAwesomeIcon icon={['fab', 'facebook']}/> Share</button> */}
                                     <div className="fb-share-button" data-href={`https://marvelfan.herokuapp.com/movies/${this.props.match.params.moviesId}`} data-layout="button" data-size="large" data-mobile-iframe="true">
-                                        <a target="_blank" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarvelfan.herokuapp.com%2Fmovies%2F${this.props.match.params.moviesId}&amp;src=sdkpreparse`} className="fb-xfbml-parse-ignore">Share</a>
+                                        <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarvelfan.herokuapp.com%2Fmovies%2F${this.props.match.params.moviesId}&amp;src=sdkpreparse`} className="fb-xfbml-parse-ignore">Share</a>
+                                        {/* <Link to={`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarvelfan.herokuapp.com%2Fmovies%2F${this.props.match.params.moviesId}&amp;src=sdkpreparse`} target="_blank" rel="noopener noreferrer" className="fb-xfbml-parse-ignore">Share</Link> */}
                                     </div>
                             </div>    
                             <div className="col-half" style={{width: this.state.colhalfWidth}}>
-                                <button className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
-                                    <FontAwesomeIcon icon={faHeart}/> Favorite</button>
+
+                                {/* <button className="btn btn-love" onClick={this.addFavor}  style={{marginTop: this.state.btnLoveMT}}>
+                                    <FontAwesomeIcon icon={faHeart}/> Favorite</button> */}
+                                    {/* this.handleChangeFa===true?this.addFavor:"" */}
+                                {/* <button onClick={this.addFavor} className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
+                                <FontAwesomeIcon icon={this.state.fa}/> {this.state.word}</button> */}
+                                {showFavButton}
                             </div>    
                         </div>
                     </div>
@@ -123,7 +225,7 @@ class DetailMovie extends Component {
                                         <div className="inforValue">120 minutes</div>
                                     </li>
                                     <li className="inforRow">
-                                        <div className="inforLabel">RELEASE DATE:</div>
+                                        <div className="inforLabel">Release Date:</div>
                                         <div className="inforValue">{this.state.movieDetail.release_date}</div>
                                     </li>
                                 </ul>
@@ -136,4 +238,4 @@ class DetailMovie extends Component {
     }
 }
 
-export default DetailMovie;
+export default withRouter(DetailMovie);

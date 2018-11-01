@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 class AllTVshows extends Component {
     state = {
+        word: "TV SERIES",
+        size: "8rem",
         tvContent:[{}]
 	}
 
@@ -17,10 +19,38 @@ class AllTVshows extends Component {
                 });
             })
             .catch(err => console.error(err));
+            window.addEventListener('resize', this.handleResize);
     }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize)
+    }
+
+    handleResize = (event) => {
+        if(window.innerWidth<700){
+            this.setState({
+                size: "4rem",
+            })
+        }else{
+            this.setState({
+               size:"8rem"
+            })
+        }
+
+        if(window.innerWidth<500){
+            this.setState({
+                size: "2rem"
+            })
+        }else{
+            this.setState({
+                word:"TV SERIES"
+            })
+        }
+    }
+
     render() {
         const allTVshow = this.state.tvContent.map(content=>(
-            <div key={content._id} className="col-4"> 
+            <div key={content._id} className="col-md-4"> 
                 <Link to = {`/tvshows/${content.id}`} className="elementlink">
                     <EachTVshow detail={content}  />
                 </Link>
@@ -29,7 +59,7 @@ class AllTVshows extends Component {
         return (
             <div>
                 <div style={{position: "absolute", top: "15%", left: "0", width:"100%",  zIndex: "2"}} >
-                    <h1 style={{fontSize:"8rem",color: "white",textAlign:"center"}}>TV SERIES</h1>
+                    <h1 style={{fontSize:this.state.size,color: "white",textAlign:"center"}}>{this.state.word}</h1>
                 </div>
                 <img style={{width:"100%",zIndex:"10",marginTop:"-40px"}} src="https://terrigen-cdn-dev.marvel.com/content/prod//2x/thegifteds2-com_mas_dsk_01.jpg" alt="Cú lừa"/>
                 
