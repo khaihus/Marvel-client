@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "../../axios";
 import EachMovie from '../content/EachMovie';
-import EachTVshow from '../content/EachTVshow';
+// import EachTVshow from '../content/EachTVshow';
 import { Alert } from 'reactstrap';
 class Favorite extends Component {
 

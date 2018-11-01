@@ -9,6 +9,7 @@ import AllMovies from "./components/containers/AllMovies";
 import AllTVshows from "./components/containers/AllTVshows";
 import DetailMovie from "./components/content/DetailMovie";
 import DetailTVshow from "./components/content/DetailTVshow";
+import AllNews from "./components/containers/AllNews";
 // import axios from './axios';
 import Login from './components/form/Login';
 import SignUp from './components/form/SignUp';
@@ -131,6 +132,12 @@ class App extends Component {
               </div>
               <Route exact path="/movies" component={AllMovies} />
               <Route exact path="/tvshows" component={AllTVshows} />
+              <Route exact path="/news" render={props=>{
+                return <div>
+                  <SlideShow/>
+                  <AllNews/>
+                </div>
+              }} />
               <Route exact path="/search/:value" render={props=>{
                 return <SearchResult {...props} onSearchChanged={this.onSearchChanged} text ={text} />
               }}/>
