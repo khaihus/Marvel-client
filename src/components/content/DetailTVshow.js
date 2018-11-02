@@ -239,6 +239,17 @@ class DetailTVshow extends Component {
                         </div>
                     </div>
                 </div>  
+                <div className=" container text-center mb-5" style={{width:"50%"}}>
+                    <div className="alert alert-success" role="alert">
+                    <h2 className="alert-heading text-center">Link FullHD vietsub!</h2>
+                    <button className="btn btn-success mt-4" >
+                    <FontAwesomeIcon style={{color:"#d4edda"}} icon={faHeart}/>    
+                    <a target="_blank" className="elementlink" style={{color: "#fff"}} without rel="noopener noreferrer" href={`http://lmgtfy.com/?q=${this.state.tvshowDetail.title}+full+hd+vietsub`}>  Just click it!</a>
+                    </button>
+                    <hr/>
+                    <p className="mb-0"># <strong>TV Series</strong> </p>
+                    </div>
+                </div>
             </div>
         );
     }
