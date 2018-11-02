@@ -41,23 +41,24 @@ class SignUp extends Component {
               url: `api/listfavor/create`,
               data: {
                   username:sessionStorage.getItem('username'),
-                  "listfv":{Id:`tv/${this.props.match.params.moviesId}`
-                  ,name:`${this.state.tvshowDetail.name}`}
+                  "listfv":{Id:``
+                  ,name:``}
               },
               withCredentials:true
               }).then(data =>{
                   console.log("create list success: "+data);
               }).catch(err =>{
-                  console.log(err+" fail to create list")
+                  console.log(err+" fail to create list (lừa đấy)")
               });
           }
         this.props.history.push("/Login");      
       })
       .catch (err=>{
           console.log(err)
+          if(err.response){
           if(err.response.status===500){
             this.setState({signUpFalse:true});
-          }
+          }}
        });
   }
     render() {

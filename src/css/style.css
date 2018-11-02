@@ -1,38 +1,41 @@
 body {
-    background-color: #22262ae0;    
+    background-color: #22262ae0;
 }
-h5{
+
+h5 {
     /* word-wrap: break-word; */
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-} 
+}
+
 nav {
-    background-color: #22262a; 
+    background-color: #22262a;
     /* display: flex;
     height: 52px; */
     border-bottom: 1px solid #393939;
     padding: 0 20px;
-    font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
+    font-family: DIN Next W01 Regular, Trebuchet MS, Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 800;
 }
-.logo{ 
+
+.logo {
     height: 52px;
 }
 
-.homecontent{
+.homecontent {
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
 
-.topNav .btn-facebook{
-    background-color:  #3b5998;
+.topNav .btn-facebook {
+    background-color: #3b5998;
     color: #FFF;
     cursor: pointer;
 }
 
-.topNav .fa-search{
+.topNav .fa-search {
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
@@ -45,7 +48,7 @@ nav {
     height: 51px;
 }
 
-.showMore{
+.showMore {
     /* margin-top: 10vh; */
     text-decoration: none !important;
 }
@@ -62,6 +65,7 @@ nav {
 h2 span {
     color: white;
 }
+
 span a {
     color: white;
 }
@@ -84,23 +88,24 @@ span a {
     padding: 0 18px;
     letter-spacing: 1px;
     font-size: 13px;
-    
+
 }
+
 .item :hover {
     color: rgba(255, 255, 255, 0.76);
     border-bottom: solid 0.5px orangered;
 }
 
-.hightlight{
+.hightlight {
     color: red;
 }
 
-.middleP{
+.middleP {
     /* height: auto !important; */
     /* display: flex; */
     min-height: 52vh;
-  /* flex-direction: column; */
-  /* justify-content: space-between */
+    /* flex-direction: column; */
+    /* justify-content: space-between */
 }
 
 #myFooter {
@@ -110,7 +115,7 @@ span a {
     /* overflow: hidden; */
 
     position: sticky;
-    bottom:0 ; 
+    bottom: 0;
 }
 
 #myFooter .footer-copyright {
@@ -130,6 +135,7 @@ span a {
     list-style-type: none;
     padding-left: 0;
     line-height: 1.7;
+    font-weight: bold;
 }
 
 #myFooter h5 {
@@ -150,7 +156,12 @@ span a {
     text-decoration: none;
 }
 
-#myFooter a:hover, #myFooter a:focus {
+.nameTeam {
+    color: #007bff;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
     text-decoration: none;
     color: white;
 }
@@ -171,15 +182,18 @@ span a {
 #myFooter .social-networks a:hover {
     text-decoration: none;
 }
-.elementlink{
+
+.elementlink {
     color: #007bff;
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
-.elementlink:hover{
+
+.elementlink:hover {
     text-decoration: none;
     color: #025fc4;
 }
+
 #myFooter .btn {
     color: white;
     background-color: #d84b6b;
@@ -195,7 +209,8 @@ span a {
 .col-md-12 {
     text-align: center;
 }
-.col-sm-12{
+
+.col-sm-12 {
     text-align: center;
 }
 
@@ -255,57 +270,63 @@ span a {
 .button:after:hover{
     border: 3px solid #cd1f23;
 } */
-.btn-facebook{
+.btn-facebook {
     background-color: #3b5998;
-    
+
 }
-.show{
+
+.show {
     width: 100%;
     /* height: 50vh; */
     position: relative;
 
 }
+
 .trailer {
     position: relative;
 }
+
 /* .col-half{ */
-    /* width: 100%; */
+/* width: 100%; */
 /* } */
-.favor{
+.favor {
     color: #fff;
 }
-.image-inner .content{
+
+.image-inner .content {
     text-align: start;
 }
 
-.image-inner .content .hightlight{
+.image-inner .content .hightlight {
     font-weight: 700;
 }
 
-.shadows{
+.shadows {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.filmDetail img{
+.filmDetail img {
 
-   width: 100%;
+    width: 100%;
     -webkit-filter: blur(5px);
     -o-filter: blur(5px);
     -moz-filter: blur(5px);
-    filter: blur(5px); 
+    filter: blur(5px);
     overflow: hidden;
-    
+
 }
 
-.infor{
+.infor {
     margin-top: 5px;
-   display: table; 
+    display: table;
 }
-.inforRow{
+
+.inforRow {
     margin-top: 5px;
     display: table-row;
 }
-.inforLabel{
+
+.inforLabel {
     display: table-cell;
     min-height: 1px;
     padding: 0 10px;
@@ -316,7 +337,8 @@ span a {
     width: 23%;
     color: #787878;
 }
-.inforValue{
+
+.inforValue {
     display: table-cell;
     min-height: 1px;
     padding: 0 10px;
@@ -324,31 +346,36 @@ span a {
     vertical-align: top;
     width: 77%;
 }
+
 .favor {
-position: absolute; 
-top: 5%;
-left: 5%;
-color: white;
-z-index: 2;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: white;
+    z-index: 2;
 }
-.poster{
+
+.poster {
     width: 300px;
     height: 450px;
 }
+
 .favor h1 {
     color: white;
     /* font-size: 4rem; */
 }
+
 .favor h2 {
     /* color: white; */
     font-size: 2rem;
 }
-.favor .btn-facebook{
+
+.favor .btn-facebook {
     width: 110px;
     color: white;
 }
 
-.btn-love{
+.btn-love {
     width: 83px;
     border-radius: 4px;
     font-size: 13px;
@@ -357,58 +384,60 @@ z-index: 2;
     color: white;
 
     line-height: 1.8;
-    
+
     background-color: #cd1f23;
     /* margin-top:3vh; */
 }
 
-.image-inner{
+.image-inner {
     color: #fff;
-  
+
 }
 
 /* _______________________________________
  */
 
- .login {
+.login {
     color: #fff;
     margin: 5vh;
     padding: 5vh;
-    border: solid 1px  ;
+    border: solid 1px;
     border-radius: 5px;
 }
 
-.love{
-    font-size: 2.5rem; 
+.love {
+    font-size: 2.5rem;
     float: right;
     color: #ccc;
 }
-.love :hover{
+
+.love :hover {
     color: #cd1f23;
 }
 
 .menubar {
-    text-align: center; 
-    margin:auto;
-    display: flex; 
-    width: 100%;
-    box-sizing: border-box; 
-
-}
-
-.menubarList{
+    text-align: center;
+    margin: auto;
     display: flex;
-            margin-left: auto;
-            margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+
 }
 
-.listItem{
+.menubarList {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listItem {
     font-weight: 800;
     padding: 0 18px;
     cursor: pointer;
     list-style: none;
 }
-.listItem :hover{
+
+.listItem :hover {
     border-bottom: solid 0.2px orangered;
 }
 
@@ -418,14 +447,14 @@ z-index: 2;
     }
   } */
 
-  @media only screen and (max-width: 1000px )  and (min-width: 500px){
-    
-    .fa-search{
+@media only screen and (max-width: 1000px) and (min-width: 500px) {
+
+    .fa-search {
         float: right;
     }
-  }
+}
 
-  /* @media only screen and (max-width: 762px )  and (min-width: 500px){
+/* @media only screen and (max-width: 762px )  and (min-width: 500px){
     .logo{
         float: center;
     }
