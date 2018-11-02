@@ -71,7 +71,7 @@ class Footer extends Component {
                                 </div>
                                 <a href="#top">
                                     <button type="button" className="btn btn-default">
-                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/messages/t/huskhai3k">Contact to Dev team</a>
+                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/messages/t/huskhai3k">Contact to Dev</a>
                                     </button>
                                 </a>
                             </div>
