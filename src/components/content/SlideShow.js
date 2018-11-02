@@ -7,9 +7,12 @@ import {
     CarouselCaption
 } from 'reactstrap';
 
-import img_1 from '../../img/Spider-Man-Far-From-Home-Teaser-Poster.jpg';
-import img_2 from '../../img/avenger1.jpg';
-import img_3 from '../../img/venom1.jpg';
+import img_1 from '../../img/anh/Spider-Man-Far-From-Home-Teaser-Poster.jpg';
+import img_2 from '../../img/anh/a2.jpg';
+import img_3 from '../../img/anh/venom1.jpg';
+// import img_1 from '../../img/Spider-Man-Far-From-Home-Teaser-Poster.jpg';
+// import img_2 from '../../img/avenger1.jpg';
+// import img_3 from '../../img/venom1.jpg';
 
 const items = [
     {

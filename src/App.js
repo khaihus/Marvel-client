@@ -10,6 +10,7 @@ import AllTVshows from "./components/containers/AllTVshows";
 import DetailMovie from "./components/content/DetailMovie";
 import DetailTVshow from "./components/content/DetailTVshow";
 import AllNews from "./components/containers/AllNews";
+import AboutUs from "./components/containers/AboutUs";
 // import axios from './axios';
 import Login from './components/form/Login';
 import SignUp from './components/form/SignUp';
@@ -138,6 +139,7 @@ class App extends Component {
                   <AllNews/>
                 </div>
               }} />
+              <Route exact path="/about" component={AboutUs} />
               <Route exact path="/search/:value" render={props=>{
                 return <SearchResult {...props} onSearchChanged={this.onSearchChanged} text ={text} />
               }}/>

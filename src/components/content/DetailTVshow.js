@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart,faTrash } from '@fortawesome/free-solid-svg-icons';
+import { withRouter } from 'react-router-dom'
 // import config from '../../config';
 import axios from "../../axios";
 
@@ -14,7 +15,8 @@ class DetailTVshow extends Component {
         h1Font: "4rem",
         word: "Favorite",
         fa: faHeart,
-        isclick: "off"
+        isclick: "off",
+        message:""
 	}
 
     componentDidMount(){
@@ -92,7 +94,9 @@ class DetailTVshow extends Component {
             // this.handleChangeFa;
 
             // this.setState({isclick:"off"})
-
+            this.setState({
+                message:"Success!"
+            })
             console.log(data);
         }).catch(err =>{
             console.log(err+" loi addFV")
@@ -139,11 +143,20 @@ class DetailTVshow extends Component {
         });
     }
     render() {
+        const checkMess = this.state.message === "Success!" ?
+            <div class="alert alert-success alert-dismissible fade show text-center" style={{width:"100%"}} role="alert">
+                {this.state.message}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        :<div></div>
         const showFavButton = this.state.word ==="Favorite" ? 
         <div>
             <button onClick={this.addFavor} className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
                 <FontAwesomeIcon icon={this.state.fa}/> {this.state.word}
             </button>
+            {checkMess}
         </div>:
         <div>
             <button onClick={this.deleteFavor} className="btn btn-love"  style={{marginTop: this.state.btnLoveMT}}>
@@ -231,4 +244,4 @@ class DetailTVshow extends Component {
     }
 }
 
-export default DetailTVshow;
+export default withRouter(DetailTVshow);

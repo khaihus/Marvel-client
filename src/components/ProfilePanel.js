@@ -31,7 +31,7 @@ class ProfilePanel extends Component {
         // const display = !this.props.username ? (
         const display = this.props.onLogin() ? (
             <div>
-                <span className = "navbar-text image-inner">{sessionStorage.getItem("username")},</span> 
+                <span className = "navbar-text image-inner">{sessionStorage.getItem("username")},&nbsp;&nbsp;</span> 
                 <Link to = {"/"} className = "btn btn-primary" onClick={this.onSignOut}>
                     Sign Out 
                 </Link> 
@@ -43,7 +43,7 @@ class ProfilePanel extends Component {
             </Link> 
         );
         return (
-            <div className="col-3 profile_panel text-right">
+            <div className=" profile_panel text-left">
                 {display}
             </div>
         );

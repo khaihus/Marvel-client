@@ -58,7 +58,7 @@ class AllTVshows extends Component {
         ));
         return (
             <div>
-                <div style={{position: "absolute", top: "15%", left: "0", width:"100%",  zIndex: "2"}} >
+                <div style={{position: "absolute", top: "23%", left: "0", width:"100%",  zIndex: "2"}} >
                     <h1 style={{fontSize:this.state.size,color: "white",textAlign:"center"}}>{this.state.word}</h1>
                 </div>
                 <img style={{width:"100%",zIndex:"10",marginTop:"-40px"}} src="https://terrigen-cdn-dev.marvel.com/content/prod//2x/thegifteds2-com_mas_dsk_01.jpg" alt="Cú lừa"/>

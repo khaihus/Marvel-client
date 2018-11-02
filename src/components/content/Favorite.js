@@ -53,8 +53,8 @@ class Favorite extends Component {
     // }
 
     render() {
-        var checkid = this.state.movieContents[0].id/10000 ;
-        console.log(checkid);
+        // var checkid = this.state.movieContents[0].id/10000 ;
+        // console.log(checkid);
 
         // const moveLink = thi
 
@@ -64,7 +64,6 @@ class Favorite extends Component {
                 // const path = "movies"
                 //  content.id ? 
                 <div key={content._id} className="col-md-4" > 
-                    {}
                     <Link to = {`/movies/${content.id}`} className="elementlink">
                     {/* <Link to = {`  /${(6<10) ? `tvshows` : `movies`}/${content.id}`} className="elementlink"> */}
                         <EachMovie detail={content}  />

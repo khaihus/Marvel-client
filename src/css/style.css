@@ -417,3 +417,16 @@ z-index: 2;
         display: none;
     }
   } */
+
+  @media only screen and (max-width: 1000px )  and (min-width: 500px){
+    
+    .fa-search{
+        float: right;
+    }
+  }
+
+  /* @media only screen and (max-width: 762px )  and (min-width: 500px){
+    .logo{
+        float: center;
+    }
+  } */

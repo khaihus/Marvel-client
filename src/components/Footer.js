@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom';
 class Footer extends Component {
     render() {
         return (
@@ -16,13 +16,17 @@ class Footer extends Component {
                                 <h5>Marvel fan film</h5>
                                 <ul>
                                     <li>
-                                        Nguyễn Quang Trường
+                                        <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/beovuive1">Nguyễn Quang Trường</a>
                                     </li>
                                     <li>
-                                        Bùi Anh Tú
+                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/t0ank55">Bùi Anh Tú</a>
+
+                                        
                                     </li>
                                     <li>
-                                        Vũ Đức Khải
+                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/huskhai3k">Vũ Đức Khải</a>
+
+                                        
                                     </li>
                                     <li>
                                         Nguyễn Ngọc Hiếu
@@ -50,7 +54,8 @@ class Footer extends Component {
                                 <h5>About Us</h5>
                                 <ul>
                                     <li>
-                                        <a target="_blank" without rel="noopener noreferrer" href="#top">3 từ thôi: Team pro vl</a>
+                                        {/* <a target="_blank" without rel="noopener noreferrer" href={`/about`}>Marvel's fan Team</a> */}
+                                        <Link to={"/about"}>Marvel's fan Team</Link>
                                     </li>
                                 </ul>
                             </div>
