@@ -58,7 +58,7 @@ class Favorite extends Component {
 
         // const moveLink = thi
 
-        const allMovie =  this.state.movieContents[0].id 
+        const allMovie =  this.state.movieContents[0]
         ?
             this.state.movieContents.map(content => (
                 // const path = "movies"

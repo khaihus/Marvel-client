@@ -72,7 +72,7 @@ handlerOnSubmit=(event)=>{
                     <div className="form-row">
                       <div className="form-group col-md-6">
                         <label htmlFor="inputEmail4">Username</label>
-                        <Input type="text" value={this.state.username}  onChange={this.handleInputChange} name="username" className="form-control" id="inputEmail4" placeholder="Username"/>
+                        <Input type="text" value={this.state.username}  onChange={this.handleInputChange} name="username" className="form-control" id="inputEmail4" placeholder="Username" required/>
                       </div>
                       
                     </div>
@@ -81,7 +81,7 @@ handlerOnSubmit=(event)=>{
 
                       <div className="form-group col-md-6">
                         <label htmlFor="inputPassword4">Password</label>
-                        <Input type="password" value={this.state.password} onChange={this.handleInputChange} name="password" className="form-control" id="inputPassword4" placeholder="Password"/>
+                        <Input type="password" value={this.state.password} onChange={this.handleInputChange} name="password" className="form-control" id="inputPassword4" placeholder="Password" required/>
                       </div>
                     </div>
                     {this.state.loginFalse? <p className="hightlight">Wrong Username or Password</p> : ""}

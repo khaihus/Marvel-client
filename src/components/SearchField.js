@@ -28,13 +28,14 @@ class SearchField extends Component {
             .get(`/api/movies/search/${this.state.text}`)
             .then(data => {
                 this.setState({ 
-                    movieContents: data.data
+                    movieContents: data.data,
+                    text:""
                 });
             })
             .catch(err =>
                 console.error(err));
         
-        this.props.history.push(`/search/${this.state.text}`);
+        this.props.history.push(`/search/${this.state.text.toLowerCase()}`);
     }
 
     render() {
