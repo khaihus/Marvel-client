@@ -13,26 +13,23 @@ class Footer extends Component {
                                 {/* </a> */}
                             </div>
                             <div className="col-12 col-sm-12 col-md-4 col-lg-3">
-                                <h5>Marvel fan film</h5>
+                                <h5>Core Team</h5>
                                 <ul>
                                     <li>
                                         <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/beovuive1">Nguyễn Quang Trường</a>
                                     </li>
                                     <li>
-                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/t0ank55">Bùi Anh Tú</a>
-
-                                        
+                                        <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/t0ank55">Bùi Anh Tú</a>
                                     </li>
                                     <li>
-                                    <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/huskhai3k">Vũ Đức Khải</a>
-
-                                        
+                                        <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/huskhai3k">Vũ Đức Khải</a>
                                     </li>
                                     <li>
-                                        Nguyễn Ngọc Hiếu
+                                        <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/nguyengoc.hie">Nguyễn Ngọc Hiếu</a>
                                     </li>
                                     <li>
-                                        Supporter: Huỳnh Tuấn Huy
+                                        Supporter: 
+                                        <a target="_blank" without rel="noopener noreferrer" href="https://www.facebook.com/huynhtuan.huy.5">Huỳnh Tuấn Huy</a>
                                     </li>
 
                                 </ul>
